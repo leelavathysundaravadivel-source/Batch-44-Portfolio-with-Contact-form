@@ -5,6 +5,35 @@
     /* Ensures padding doesn't break layout width */
 }
 
+
+/* Ensure the font family applies to EVERYTHING including form elements */
+
+*,
+*::before,
+*::after {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #95a5a6;
+    opacity: 1;
+}
+
+
+/* Ensure labels and select options also match */
+
+label,
+select,
+option,
+input,
+textarea,
+button {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
@@ -194,4 +223,72 @@ footer {
     text-align: center;
     padding: 30px;
     margin-top: 50px;
+}
+
+
+/* 8. BUTTONS & HOVER EFFECTS (Rounded Style) */
+
+.form-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* Allows buttons to stack on small screens */
+}
+
+
+/* Base style for all buttons to ensure consistent rounding */
+
+input[type="submit"],
+input[type="reset"],
+.btn-secondary {
+    padding: 12px 35px;
+    border-radius: 50px;
+    /* High value creates the pill/rounded shape */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* Smooth animation for hover */
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* Primary Button (Submit) with Gradient */
+
+input[type="submit"] {
+    background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+    color: white;
+    box-shadow: 0 4px 10px rgba(26, 82, 118, 0.2);
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-3px);
+    /* Lifts the button slightly */
+    box-shadow: 0 6px 15px rgba(26, 82, 118, 0.3);
+    opacity: 0.95;
+}
+
+
+/* Reset Button (Secondary) */
+
+input[type="reset"] {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #d1d8e0;
+}
+
+input[type="reset"]:hover {
+    background-color: #d5dbdb;
+    transform: translateY(-3px);
+}
+
+
+/* Additional Button Style if needed */
+
+.btn-secondary {
+    background-color: #1a2a6c;
+    color: white;
 }
